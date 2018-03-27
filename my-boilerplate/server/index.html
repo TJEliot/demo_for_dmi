@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Demo</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <script>
+    var myStrings = ['This is the starting quote that all logs begin with, dontchaknow<br>'];
+    var displayedOrNot = false;
+    var save = function(){
+      var thisString = document.getElementById('quoteBox').value;
+      myStrings.push(thisString + `<br>`);
+      console.log(myStrings);
+    }
+    var display = function() {
+      if (displayedOrNot === false) {
+        var displayList = ``;
+        console.log(myStrings[0]);
+        for (var i = 0; i < myStrings.length; i++) {
+          displayList += myStrings[i];
+        }
+        document.getElementById('listOfStrings').innerHTML = displayList;
+        displayedOrNot = true;
+      } else {
+        document.getElementById('listOfStrings').innerHTML = '';
+        displayedOrNot = false;
+      }
+    } 
+    </script>
+
+  <body>
+    <div id="main"></div>
+    <h1>This is where we save quotes</h1>
+    <textArea id="quoteBox" placeholder="What quote would you like to save?"></textArea>
+    <button onclick="save()">save this quote</button>
+    <button onclick="display()">display the saved quotes</button>
+    <div id="listOfStrings">list</div>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+DROP TABLE IF EXISTS myStrings;
+
+CREATE TABLE myStrings (stringId INTEGER PRIMARY KEY AUTOINCREMENT, quote varchar(255));
+
